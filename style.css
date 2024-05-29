@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Kalnia", serif;
+    color: l;
+}
+.card{
+    width: 109%;
+max-width: 423px;
+background: linear-gradient(135deg,#00feba,#5b548a,lightpink);
+color: #fff;
+border-radius: 20px;
+text-align: center;
+height: 552px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 11px;
+}
+.card button{
+    height: 35px;
+width: 45px;
+background: transparent;
+border: none;
+border-radius: 5px;
+font-size: 21px;
+cursor: pointer;
+}
+.card input{
+    width: 300px;
+height: 30px;
+border-radius: 5px;
+border: none;
+background: transparent;
+font-size: 24px;
+outline: 0;
+font-family: "Kalnia", serif;
+}
+.c1{
+    width: 400px;
+background-color: #e8d8d8a1;
+border-radius: 5px;
+margin-top: 10px
+}
+.card button:hover{
+    background-color: grey;
+}
+.jk {
+    width: 200px;
+}
+.ss{
+    width: 95px;
+}
+.detail{
+    width: 100%;
+display: flex;
+justify-content: space-around;
+position: relative;
+bottom: -62px;
+}

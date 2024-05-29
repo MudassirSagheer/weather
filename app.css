@@ -1,0 +1,23 @@
+.card input{
+    width: 66vw;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  outline: 0;
+  font-family: "Kalnia", serif;
+}
+.c1{
+  width: 91vw;
+  background-color: #e8d8d8a1;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.detail{
+    width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: 2vw;
+}
