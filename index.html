@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Kalnia:wght@100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" media="screen and (max-width:360px)" href="app.css"> 
+
+
+
+    <title>Weather</title>
+   
+    
+</head>
+<body>
+    
+    <div class="card">
+
+    <div class="c1">
+        <i class="bi bi-geo-alt-fill" style="color: black;
+        font-size: 25px;"></i>
+        <input id="sea" type="text" placeholder="Enter Your City Name">
+        <button id="htm"><i class="bi bi-search"></i></button>
+    </div>
+    <div class="weather">
+    <img src="surag.png" alt="" class="jk">
+    <h1 id="dt" style="margin: 0;" >22°C</h1>
+    <h3 id="dc" style="margin: 0;" >New York</h3>
+</div>
+<div class="detail"> 
+    <div class="sa">
+    <img class="ss" src="1sa-removebg-preview.png" alt="">
+   
+        <p id="dh"style="margin: 0;">50%</p>
+        <p  style="margin: 0;">Humidity</p>
+    </div>
+    <div class="sa">
+    <img class="ss" src="wid.gif" alt="">
+   
+        <p id="ds" style="margin: 0;">15KM/HOUR</p>
+        <p style="margin: 0;">Wind Speed</p>
+    </div>
+</div>
+</div>
+<script>
+    let apikey="f96347KbdmEUVEBeG3xK9U9Je1z4GKwjaPiUE";
+    let apiurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+let dada = document.querySelector("#sea")
+let dad = document.querySelector("#htm")
+let icon = document.querySelector(".jk")
+
+    async function cww(City){
+        let resp  = await fetch(apiurl + City + `&appid=${apikey}`);
+        let a= await resp.json();
+        console.log(a);
+        document.querySelector("#dt").innerHTML= Math.round(a.main.temp ) + "°C";
+        document.querySelector("#dc").innerHTML=a.name;
+        document.querySelector("#dh").innerHTML=a.main.humidity + "%" ;
+        document.querySelector("#ds").innerHTML=Math.round (a.wind.speed) + "  Km/Hour";
+
+       
+
+    if(a.weather[0].main=="Clouds"){
+icon.src="badal.png"
+    }else if(a.weather[0].main=="Clear"){
+        icon.src="surag.png"
+    }
+    else if(a.weather[0].main=="Drizzle"){
+        icon.src="rain.png"
+    }
+    else if(a.weather[0].main=="Rain"){
+        icon.src="hard.png"
+    }
+    else if(a.weather[0].main=="Mist"){
+        icon.src="we.png"
+    }
+    else if(a.weather[0].main=="Snow"){
+        icon.src="dw.gif"
+    }
+
+
+    }
+    
+    dad.addEventListener("click",()=>{
+       cww(dada.value) 
+       dada.value="";
+     
+    })
+    
+</script>
+
+</body>
+</html>
